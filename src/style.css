@@ -124,8 +124,19 @@ output {
   color: var(--pink);
 }
 
+#lives .pip {
+  width: 22px;
+  clip-path: polygon(50% 0, 100% 100%, 0 100%);
+  background: currentColor;
+}
+
 .cell {
   color: var(--yellow);
+}
+
+#power .cell {
+  flex: 1;
+  border-radius: 2px;
 }
 
 .pip.lit,
@@ -187,6 +198,13 @@ output {
   gap: var(--small-gap);
   font-size: 12px;
   color: var(--muted-color);
+}
+
+.stop-dot {
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
 }
 
 .stop[data-state="cleared"] {
