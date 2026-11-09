@@ -43,7 +43,16 @@ export class GameScene extends Phaser.Scene implements Arena {
   rng!: Rng;
   player!: Player;
   now = 0;
-  private run;
+
+  private run!: {
+  score: number;
+  lives: number;
+  kills: number;
+  hits: number;
+  continues: number;
+  bossDefeated: boolean;
+};
+
   private pilot!: Pilot;
   private backdrop!: Backdrop;
   private enemies: ShmupPrefabSprite[] = [];
@@ -321,12 +330,6 @@ export class GameScene extends Phaser.Scene implements Arena {
         x,
         y,
         "drone",
-        2,
-        100,
-        13,
-        0.015,
-        true,
-        false,
         x,
         x < WIDTH / 2 ? 1 : -1,
       ),
@@ -443,26 +446,11 @@ export class GameScene extends Phaser.Scene implements Arena {
 
       if (t !== spawnTime) continue;
 
-      const stats = {
-        drone: [2, 100, 13, 0.015, true],
-        dart: [1, 150, 12, 0.015, false],
-        turret: [12, 400, 19, 0.3, true],
-        lancer: [4, 250, 15, 0.06, true],
-      } as const;
-
-      const enemyStats = stats[wave.kind];
-
       const enemy = new ShmupPrefabSprite(
         this,
         x,
         y,
         wave.kind,
-        enemyStats[0],
-        enemyStats[1],
-        enemyStats[2],
-        enemyStats[3],
-        enemyStats[4],
-        false,
         x,
         i % 2 === 0 ? 1 : -1,
       );
