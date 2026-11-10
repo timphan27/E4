@@ -45,13 +45,13 @@ export class GameScene extends Phaser.Scene implements Arena {
   now = 0;
 
   private run!: {
-  score: number;
-  lives: number;
-  kills: number;
-  hits: number;
-  continues: number;
-  bossDefeated: boolean;
-};
+    score: number;
+    lives: number;
+    kills: number;
+    hits: number;
+    continues: number;
+    bossDefeated: boolean;
+  };
 
   private pilot!: Pilot;
   private backdrop!: Backdrop;
