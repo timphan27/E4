@@ -17,7 +17,7 @@ import { AutoPilot, KeyboardPilot, type Pilot } from "./pilots.ts";
 import { Rng } from "./rng.ts";
 import { loadSounds, play } from "./sounds.ts";
 import { makeTextures, TINTS } from "./textures.ts";
-import { Backdrop } from "./backdrop.ts";
+import { Backdrop } from "./scenes/backdrop.ts";
 
 const TICK_MS = 1000 / 60;
 const START_LIVES = 3;
