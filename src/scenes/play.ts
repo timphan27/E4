@@ -24,26 +24,28 @@ const START_LIVES = 3;
 const BOSS_WARNING_TICKS = 200;
 const VICTORY_TICKS = 180;
 
-type RunSummary = {
+interface RunTotals {
+  score: number;
+  lives: number;
+  kills: number;
+  hits: number;
+  continues: number;
+  bossDefeated: boolean;
+}
+
+interface RunSummary {
   score: number;
   kills: number;
   hits: number;
   continues: number;
-};
+}
 
 export class PlayScene extends Phaser.Scene implements Arena {
   rng!: Rng;
   player!: Player;
   now = 0;
 
-  private run!: {
-    score: number;
-    lives: number;
-    kills: number;
-    hits: number;
-    continues: number;
-    bossDefeated: boolean;
-  };
+  private run!: RunTotals;
 
   private isAttract = false;
   private pilot!: Pilot;

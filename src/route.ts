@@ -1,22 +1,22 @@
 export type EnemyKind = "drone" | "dart" | "turret" | "lancer";
 export type Formation = "line" | "vee" | "column" | "pincer";
 
-export type WaveConfig = {
+export interface WaveConfig {
   start: number;
   count: number;
   kind: EnemyKind;
   formation: Formation;
   centerX: number;
   spacing?: number;
-};
+}
 
-export type SectorConfig = {
+export interface SectorConfig {
   name: string;
   subtitle: string;
   length: number;
   waves: WaveConfig[];
   boss?: boolean;
-};
+}
 
 export const ROUTE: SectorConfig[] = [
   {

@@ -157,14 +157,14 @@ function aim(from: { x: number; y: number }, arena: Arena): number {
   );
 }
 
-type EnemyBehavior = {
+interface EnemyBehavior {
   hp: number;
   score: number;
   radius: number;
   dropChance: number;
   move?: (enemy: Enemy, arena: Arena) => void;
   fire?: (enemy: Enemy, arena: Arena) => void;
-};
+}
 
 const PREFAB_STATS: Record<EnemyKind, EnemyBehavior> = {
   drone: {
