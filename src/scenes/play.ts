@@ -453,7 +453,6 @@ export class PlayScene extends Phaser.Scene implements Arena {
     this.victoryAt = this.now + VICTORY_TICKS;
     this.hud.setBoss(0);
     this.hud.announce("WARDEN DOWN", "The lanes are open");
-    console.log("victory lap: ship protected =", this.run.bossDefeated);
 
     // The Warden's fall takes its bullets and escorts with it (no score).
     for (const bullet of this.bullets) {
